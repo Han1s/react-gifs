@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './search_bar';
 
 // class App extends Component {
 //   render() {
@@ -14,7 +15,9 @@ import React from 'react';
 const App = () => {
   return (
     <div>
-      <div className="left-scene" />
+      <div className="left-scene">
+        <SearchBar />
+      </div>
       <div className="right-scene" />
     </div>
   );
