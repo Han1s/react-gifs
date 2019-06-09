@@ -23,14 +23,19 @@ class App extends Component {
       gifs: [],
       selected_gif_id: "kiBcwEXegBTACmVOnE"
     };
+
+    this.search("dog");
   }
 
   search = (query) => {
     giphy('V2m7ItECkSyrsA5lpSj2GGXEZDYawvTA').search({
       q: `${query}`,
-      rating: 'g'
+      rating: 'g',
+      limit: 10
     }, (err, res) => {
-      console.log(res);
+      this.setState({
+        gifs: res.data
+      });
     });
   }
 
@@ -38,13 +43,13 @@ class App extends Component {
     return (
     <div>
       <div className="left-scene">
-        <SearchBar />
+        <SearchBar searchFunction={this.search} />
         <div className="selected-gif">
           <Gif id={this.state.selected_gif_id} />
         </div>
       </div>
       <div className="right-scene">
-        <GifList></GifList>
+        <GifList gifs={this.state.gifs}></GifList>
       </div>
     </div>
     );

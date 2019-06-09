@@ -3,12 +3,12 @@ import Gif from './gif';
 
 class GifList extends Component {
   render() {
-    const gifs = ["kiBcwEXegBTACmVOnE", "4Zo41lhzKt6iZ8xff9", "bbshzgyFQDqPHXBo4c"];
+    const gifs = this.props.gifs;
     return (
       <div className="gif-list">
         {
-        gifs.map((id) => {
-            return <Gif id={id} key={id}></Gif>;
+        gifs.map((gif) => {
+            return <Gif id={gif.id} key={gif.id}></Gif>;
           })
         }
       </div>
