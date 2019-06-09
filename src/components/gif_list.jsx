@@ -6,9 +6,11 @@ class GifList extends Component {
     const gifs = ["kiBcwEXegBTACmVOnE", "4Zo41lhzKt6iZ8xff9", "bbshzgyFQDqPHXBo4c"];
     return (
       <div className="gif-list">
-        <Gif id="kiBcwEXegBTACmVOnE"></Gif>
-        <Gif id="4Zo41lhzKt6iZ8xff9"></Gif>
-        <Gif id="bbshzgyFQDqPHXBo4c"></Gif>
+        {
+        gifs.map((id) => {
+            return <Gif id={id} key={id}></Gif>;
+          })
+        }
       </div>
     )
   }
