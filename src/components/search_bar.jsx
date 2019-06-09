@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+handleChange = (event) => {
+  console.log("hello");
+}
+
   render () {
     return (
-      <input type="text" className="form-search form-control" />
+      <input type="text" className="form-search form-control" onChange={this.handleChange} />
     );
   }
 }
