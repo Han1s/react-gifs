@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-handleChange = (event) => {
-  console.log("hello");
-}
+  handleChange = (event) => {
+    console.log(event.target.value);
+  }
 
   render () {
     return (

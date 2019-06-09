@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
@@ -14,8 +14,9 @@ import GifList from './gif_list';
 //   }
 // }
 
-const App = () => {
-  return (
+class App extends Component {
+  render() {
+    return (
     <div>
       <div className="left-scene">
         <SearchBar />
@@ -27,7 +28,8 @@ const App = () => {
         <GifList></GifList>
       </div>
     </div>
-  );
+    );
+  }
 };
 
 export default App;
