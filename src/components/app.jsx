@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import giphy from 'giphy-api';
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
-import giphy from 'giphy-api';
 
 // class App extends Component {
 //   render() {
@@ -39,19 +39,25 @@ class App extends Component {
     });
   }
 
+  setGif = (id) => {
+    this.setState({
+      selected_gif_id: id
+    });
+  }
+
   render() {
     return (
-    <div>
-      <div className="left-scene">
-        <SearchBar searchFunction={this.search} />
-        <div className="selected-gif">
-          <Gif id={this.state.selected_gif_id} />
+      <div>
+        <div className="left-scene">
+          <SearchBar searchFunction={this.search} />
+          <div className="selected-gif">
+            <Gif id={this.state.selected_gif_id} />
+          </div>
+        </div>
+        <div className="right-scene">
+          <GifList gifs={this.state.gifs} setGifFunction={this.setGif} />
         </div>
       </div>
-      <div className="right-scene">
-        <GifList gifs={this.state.gifs}></GifList>
-      </div>
-    </div>
     );
   }
 }
