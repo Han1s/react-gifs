@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   search = (query) => {
-    giphy('V2m7ItECkSyrsA5lpSj2GGXEZDYawvTA').search({
+    giphy({ apiKey: 'V2m7ItECkSyrsA5lpSj2GGXEZDYawvTA', https: true }).search({
       q: `${query}`,
       rating: 'g',
       limit: 10
